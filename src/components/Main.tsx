@@ -1,3 +1,10 @@
+import { Header } from './Header';
+
 export const Main = () => {
-  return <div>Main</div>;
+  return (
+    <>
+      <Header />
+      <div>Main</div>
+    </>
+  );
 };
