@@ -26,7 +26,7 @@ export const Main = () => {
         {error && <Typography color='red'>エラーが発生しました</Typography>}
         {!loading && !error && (
           <>
-            <AddTask />
+            <AddTask userId={userId} />
             <TaskTable tasks={data?.getTasks} userId={userId} />
           </>
         )}
