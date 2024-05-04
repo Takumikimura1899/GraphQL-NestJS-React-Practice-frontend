@@ -7,6 +7,7 @@ import { Task } from '../types/task';
 import { GET_TASKS } from '../queries/taskQueries';
 import { Loading } from './Loading';
 import { Stack, Typography } from '@mui/material';
+import { AddTask } from './AddTask';
 
 export const Main = () => {
   const token = localStorage.getItem('token');
@@ -24,7 +25,10 @@ export const Main = () => {
         {loading && <Loading />}
         {error && <Typography color='red'>エラーが発生しました</Typography>}
         {!loading && !error && (
-          <TaskTable tasks={data?.getTasks} userId={userId} />
+          <>
+            <AddTask />
+            <TaskTable tasks={data?.getTasks} userId={userId} />
+          </>
         )}
       </Stack>
     </>
